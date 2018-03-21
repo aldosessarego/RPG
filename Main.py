@@ -1,6 +1,6 @@
 import sys
 
-print "                          -Instructions-\n     This is a text based RPG. In order to play, you only need to read the options and type the letter that corresponds to the choice you wish to make just as it is (uncapitalized).  However, on certain occasions, you'll be asked to type. Simply write the answer then press enter. Enjoy the game."
+print "                          -Instructions-\n    This is a text based RPG. In order to play, you only need to read the options and type the letter that corresponds to the choice you wish to make just as it is (uncapitalized).  However, on certain occasions, you'll be asked to type. Simply write the answer then press enter. Enjoy the game."
 
 
 def main():
@@ -59,6 +59,7 @@ def tutorial():
     Ogre = Enemies()
     Ogre.Elevel = int(1)
     Ogre.EHealth = int(50 + (15 * Ogre.Elevel))
+    print(Ogre.EHealth)
     Ogre.ESpeed = int(6)
     Ogre.EAttack = int(10 + (5 * Ogre.Elevel))
     standby()

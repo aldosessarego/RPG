@@ -56,10 +56,10 @@ def standby():
 def tutorial():
     print("\n [" + str(
         PlayerName) + " faces a small Ogre! (lv.1) ] \n\nYou see? This here is one of the many monster you'll encounter along your journey and it'll be my duty to teach you how to survive an attack.")
+    global Ogre
     Ogre = Enemies()
     Ogre.Elevel = int(1)
     Ogre.EHealth = int(50 + (15 * Ogre.Elevel))
-    print(Ogre.EHealth)
     Ogre.ESpeed = int(6)
     Ogre.EAttack = int(10 + (5 * Ogre.Elevel))
     standby()
@@ -76,8 +76,13 @@ def attack():
     print("Which attack will you use?")
     att = raw_input(">>")
     damage = int(attacks[att] * PlayerAttack)
-    print ("\n[" + str(PlayerName) + " deals " + str(damage) + "damage]")
-    standby()
+    print ("\n[" + str(PlayerName) + " deals " + str(damage) + " damage]")
+    Ogre.EHealth = (Ogre.EHealth-damage)
+    if Ogre.EHealth>0:
+      print ("[" + str(Ogre.EHealth) + " Hp left]")
+      standby()
+    else:
+        print "[Enemies defeated.]"
 
 
 def characterSelection():
